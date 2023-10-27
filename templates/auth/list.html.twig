@@ -1,0 +1,31 @@
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Username</td>
+        <td>Image</td>
+        <td>Email</td>
+        <td>Nombre des livres</td>
+        <td>Actions</td>
+    </tr>
+    {% set nbLivres=0 %}
+    {% for i in auth %}
+        {% set nbLivres = nbLivres + i['nb_books'] %}
+    <tr>
+        <td>{{ i['id'] }}
+
+
+        <td> {{ i['username']|upper }}</td>
+        <td>  <img src="{{ asset(i['picture']) }}"></td>
+        <td> {{ i['email'] }}</td>
+        <td> {{ i['nb_books'] }}</td>
+        <td><a href="{{ path('showAu',{'id':i['id']}) }}">details</a> </td>
+    </tr>
+    {% else %}
+        <h1>Tableau vide</h1>
+    {% endfor %}
+</table>
+<h1>le nombre des auteurs: {{ auth|length }}</h1>
+<h1>le nombre des livres: {{ nbLivres }}</h1>
+
+

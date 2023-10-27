@@ -1,0 +1,29 @@
+<center>
+
+    <table border="1">
+        <tr>
+            <th>Ref</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>PublicationDate</th>
+            <th>Published</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in books %}
+
+            <tr>
+                <td>{{ i.ref }}</td>
+                <td>{{ i.title }}</td>
+                <td>{{ i.category }}</td>
+                <td>{{ i.publicationDate }}</td>
+                <td>{{ i.published }}</td>
+                <td>{{ i.authors.username }}</td>
+                <td>modify remove</td>
+            </tr>
+
+        {% endfor %}
+    </table> <br/>
+
+    {{ form(form) }}
+</center>

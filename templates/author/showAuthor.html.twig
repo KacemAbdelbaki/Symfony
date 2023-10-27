@@ -1,0 +1,10 @@
+{% for author in authors %}
+    {% if author['id']== id  %}
+        <center>
+            <h1>Nom: </h1> <h3>{{ author['username'] }}</h3>
+            <h1>Image:</h1> <img style="width: 30vw" src={{ author['picture'] }}>
+            <h1>Email:</h1> <h3> {{ author['email'] }}</h3>
+            <h1>Nombre des livres:</h1> <h3> {{ author['nb_books'] }} </h3>
+        </center>
+    {% endif %}
+{% endfor %}

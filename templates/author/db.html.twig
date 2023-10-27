@@ -1,0 +1,26 @@
+<center>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for auth in authors %}
+            <tr>
+                <td>{{ auth.username }}</td>
+                <td>{{ auth.email }}</td>
+                <td><a href="{{ path('modify',{'id':auth.id}) }}">edit</a> <a href="{{ path('author_db_delete',{'id':auth.id}) }}">delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="{{ path('author_db_add') }}" method="get">
+        <label>Username</label>
+        <input type="text" name="username">
+        </br>
+        <label>Email</label>
+        <input type="text" name="email">
+        </br>
+        <button type="submit">Save</button>
+    </form>
+</center>

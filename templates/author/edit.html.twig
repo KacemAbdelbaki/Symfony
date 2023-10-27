@@ -1,0 +1,19 @@
+<form action="{{ path('author_db_edit_form',{'id': author.getId }) }}" method="get">
+    <center>
+        <table border="1">
+            <tr>
+                <th>Username</th>
+                <th>New Username</th>
+                <th>Email</th>
+                <th>new Email</th>
+            </tr>
+            <tr>
+                <td>{{ author.username }}</td>
+                <td><input name='username' type="text"></td>
+                <td>{{ author.email }}</td>
+                <td><input name="email" type="text"></td>
+            </tr>
+        </table>
+        <button type="submit">EDIT</button>
+    </center>
+</form>

@@ -1,0 +1,15 @@
+{% set nbBooks=0 %}
+
+<h1></h1>
+
+{% for i in auths %}
+
+   <img src="{{ asset(i.picture) }}">
+
+   <h1>{{ i.username }}  <a href="{{ path("revi_show_auth_by_id",{"id": i.id}) }}">info</a>  </h1>
+
+   {% set nbBooks = nbBooks + i.nb_books %}
+
+{% endfor %}
+
+<h1>nbrombre books : {{ nbBooks }} </h1>

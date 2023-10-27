@@ -1,0 +1,18 @@
+<table border="1">
+    <tr>
+        <th>CIN</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Match desc</th>
+        <th>Actions</th>
+    </tr>
+    {% for i in list %}
+        <tr>
+            <td>{{ i.cin }}</td>
+            <td>{{ i.nom }}</td>
+            <td>{{ i.prenom }}</td>
+            <td>{{ i.matchee.description }}</td>
+            <td><a href="{{ path('add_joueur') }}">ajout</a></td>
+        </tr>
+    {% endfor %}
+</table>

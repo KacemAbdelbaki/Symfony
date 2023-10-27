@@ -1,0 +1,18 @@
+{% if authors|length != 0 or authors is defined%}
+    <h2>Author's number = {{ authors|length }}</h2>
+
+    {% set nbBooks=0 %}
+
+    {% for i in authors %}
+        {% set nbBooks = nbBooks + i['nb_books'] %}
+    {% endfor %}
+    <h2>Book's number = {{ nbBooks }}</h2>
+
+    <ul>
+        {% for i in authors %}
+            <li>{{ i['username']|upper }} <a href="{{ path('author_details',{'id':i['id']}) }}">details</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h1>Aucun autheur n'est disponible</h1>
+{% endif %}
